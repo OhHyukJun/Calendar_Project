@@ -5,8 +5,8 @@ app.listen(4000, function () {
     console.log('listening on 4000')
 });
 
-var mssql = require("mssql");
-var dbConfig_user = {
+let mssql = require("mssql");
+let dbConfig_user = {
     server: "xxx.xxx.x.xx",
     database: "xxx",
     user: "xx",
