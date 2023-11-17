@@ -7,11 +7,11 @@ app.listen(4000, function () {
 
 let mssql = require("mssql");
 let dbConfig_user = {
-    server: "xxx.xxx.x.xx",
-    database: "xxx",
-    user: "xx",
-    password: "xx",
-    port: 00
+    server: "10.1.2.92",
+    database: "callendar.database.windows.net",
+    user: "dhgurwns",
+    password: "kmh7277!",
+    port: 4000
 };
 
 mssql.connect(dbConfig_user, function(err){
