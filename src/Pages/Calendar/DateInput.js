@@ -10,10 +10,6 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import "react-datepicker/dist/react-datepicker.css";
 
 export const StyledModal = styled(ReactModal)`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background: #f5f5f5;
   border-radius: 5%;
   width:20vw;
@@ -21,6 +17,7 @@ export const StyledModal = styled(ReactModal)`
   outline: none;
   opacity:1;
   display:flex-column;
+  z-index:1000;
   h2 {
     margin-top: 0;
     color: #333;
@@ -34,7 +31,6 @@ export const StyledModal = styled(ReactModal)`
     margin:0.5vw;
     width:4vw;
   }
-  z-index: 10000;
 `;
 
 const myEventsList = [
