@@ -1,8 +1,6 @@
-import express from "express";
-import pkg from 'mssql';
-import bodyParser from "body-parser";
-const { ConnectionPool } = pkg;
-
+const express = require("express");
+const { ConnectionPool } = require("mssql");
+const bodyParser = require("body-parser");
 
 const app = express();
 app.use(bodyParser.json());
@@ -26,14 +24,14 @@ pool.connect().then(() => {
 
 app.post('/event', function (req, res) {
     const event = req.body;
-    const sqlQuery = "INSERT INTO Events (title, start, end) OUTPUT INSERTED.id VALUES (?, ?, ?)";
+    const sqlQuery = "이벤트 등록";
     const params = [event.title, event.start, event.end];
 
     pool.request().query(sqlQuery, params).then(result => {
       res.status(200).json({ id: result.recordset[0].id });
     }).catch(err => {
       console.error('error : ', err);
-      res.status(500).send('Error while saving event');
+      res.status(500).send('이벤트 등록 에러');
     });
 });
 
