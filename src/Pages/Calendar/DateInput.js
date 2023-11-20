@@ -9,6 +9,10 @@ import DatePicker from "react-datepicker";
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import "react-datepicker/dist/react-datepicker.css";
 
+const MainContainer = styled(Container)`
+  z-index:0;
+`;
+
 export const StyledModal = styled(ReactModal)`
   background: #f5f5f5;
   border-radius: 5%;
@@ -96,7 +100,7 @@ export const DateInput = () => {
     }
 
     return (
-      <Container>
+      <MainContainer>
         <form onSubmit={handleSubmit}>
           <div>
             <Calendar
@@ -119,6 +123,6 @@ export const DateInput = () => {
               <Button onClick={() => setModalIsOpen(false)}>취소</Button>
             </StyledModal>
         </form>
-      </Container>
+      </MainContainer>
     );
 };
